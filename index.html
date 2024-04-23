@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data4Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="./d3.v7.min.js"></script>
+<script src="./echarts.min.js"></script>
+<title>Data4Home</title>
+</head>
+<body class="w3-light-grey">
+
+  <!-- Top container -->
+  <div class="w3-bar w3-top w3-theme-red w3-large" style="z-index:4">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+    <span class="w3-bar-item w3-right">Imóveis - Data4Home</span>
+  </div>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="w3-container">
+      <h5>Menu</h5>
+    </div>
+    </div>
+      <div class="w3-bar-block">
+      <a href="../../index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw" onclick="w3_close()"></i>Home</a>
+      <a href="./index-meat.html" class="w3-bar-item w3-button w3-padding" ><i class="fa fa-trophy fa-fw" onclick="w3_close()"></i>Top 10</a>
+      <a href="./country_profile.html" class="w3-bar-item w3-button w3-padding" onclick="w3_close()"><i class="fa fa-map-marker fa-fw"></i>Bairro</a>
+      <a href="./country_comparison.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-times fa-fw" onclick="w3_close()"></i>Bairro - Bairro</a>
+      <a href="./calculator.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calculator fa-fw" onclick="w3_close()"></i>Meu orçamento</a>
+    </div>
+  </nav>
+
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+    <!-- !internal box! -->
+    <div class="w3-container w3-white internal-box">
+      <!-- Title -->
+      <h1 class="w3-xlarge"><b>Valor do espaço</b></h1>
+      <p>
+      Mussum Ipsum, cacilds vidis litro abertis. Pellentesque nec nulla ligula.
+      Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi,
+      quis volutpat erat hendrerit non. Nam vulputate dapibus. Não sou faixa
+      preta cumpadi, sou preto inteiris, inteiris. Vehicula non. Ut sed ex eros.
+      Vivamus sit amet nibh non tellus tristique interdum.
+      </p>
+      <!-- Top 10 chart --> 
+      <h2 class="w3-large title">Preços dos imóveis x metragem</h2>
+      <h3 class="w3-medium subtitle">Dados extraídos da web</h3>
+        <div class="w3-row w3-container">
+          <div class="w3-col l6">
+              <select class="w3-select w3-margin-bottom selector" onchange="filterProfile()" id="locationDropdown1">           
+                <option value="none" selected>Selecione o bairro (quadra)</option>
+                <option value="AUS">Australia</option>           
+                <option value="ARG">Argentina</option>
+                <option value="BRA">Brazil</option>
+                <option value="CAN">Canada</option>
+                <option value="CHL">Chile</option>
+                <option value="CHN">China</option>
+                <option value="COL">Colombia</option>
+                <option value="EGY">Egypt</option>
+                <option value="ETH">Ethiopia</option>
+                <option value="IND">India</option>
+                <option value="IDN">Indonesia</option>
+                <option value="IRN">Iran (Islamic Republic of)</option>
+                <option value="ISR">Israel</option>
+                <option value="JPN">Japan</option>
+                <option value="KAZ">Kazakhstan</option>
+                <option value="MYS">Malaysia</option>
+                <option value="MEX">Mexico</option>
+                <option value="NGA">Nigeria</option>
+                <option value="NZL">New Zealand</option>
+                <option value="NOR">Norway</option>
+                <option value="PAK">Pakistan</option>
+                <option value="PRY">Paraguay</option>
+                <option value="PER">Peru</option>
+                <option value="PHL">Philippines</option>
+                <option value="RUS">Russian Federation</option>
+                <option value="SAU">Saudi Arabia</option>
+                <option value="ZAF">South Africa</option>
+                <option value="CHE">Switzerland</option>
+                <option value="THA">Thailand</option>
+                <option value="TUR">Turkey</option>
+                <option value="GBR">United Kingdom</option>
+                <option value="USA">United States of America</option>
+                <option value="UKR">Ukraine</option>
+                <option value="VNM">Viet Nam</option>
+                <option value="WLD">World</option>
+                <option value="OECD">OECD</option>
+                <option value="BRICS">BRICS</option>
+              </select>
+          </div>
+          <div class="w3-row">
+            <div class="w3-col">
+              <div class="chart" id="aptoProfile" style="width: 100%; height: 600px;"></div>
+            </div>
+
+  
+
+  
+    
+
+  <script src="index2.js"></script>
+
+</body>
+</html>
