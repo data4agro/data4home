@@ -1,6 +1,3 @@
-alert("Hello!")
-console.log("Hello!")
-grafico_dispercao();
 
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
