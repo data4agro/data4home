@@ -1,3 +1,6 @@
+var sourceData = "df_final.csv";
+carregarValoresDropdown(sourceData, "Endereço", "locationDropdown1");
+
 
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
@@ -37,11 +40,17 @@ function grafico_dispercao(){
 
 function grafico_dispercao() {
     d3.csv('df_final.csv').then(function(dados) {
-        var apto = dados.map(d => ({ 
-            Endereço: d.Endereço, 
-            Preço: parseFloat(d.Preço), 
-            Área: parseFloat(d.Característica_1)
-        }));
+        var subjectValor1 = document.getElementById('locationDropdown1').value;
+        var apto;
+
+        if (subjectValor1 !== 'Quadra/Bairro (Todos)') {
+            apto = dados.filter(d => d.Endereço === subjectValor1);
+        } else {
+            apto = dados; // Se subjectValor1 for 'todos', retorna todos os dados sem aplicar o filtro
+        }
+
+        //.filter(d => subjectValor1 !== 'todos' && d.Endereço === subjectValor1)
+        apto = apto.map(d => ({Endereço: d.Endereço,Preço: parseFloat(d.Preço/1000000).toFixed(2), Área: parseFloat(d.Característica_1)}))
         console.log(apto);
     
         var chartDom = document.getElementById('aptoProfile');
@@ -69,4 +78,4 @@ function grafico_dispercao() {
     });
 }
 
-grafico_dispercao()
+
