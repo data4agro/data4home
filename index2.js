@@ -1,5 +1,6 @@
 var sourceData = "df_final.csv";
 carregarValoresDropdown(sourceData, "Endereço", "locationDropdown1");
+grafico_dispercao();
 
 
 // Get the Sidebar
@@ -66,12 +67,13 @@ function grafico_dispercao() {
             series: [{
                 type: 'scatter',
                 data: apto.map(d => [d.Área, d.Preço]),// Mapear os dados para o formato de coordenadas [x, y]
-
                 symbolSize: 10, // Tamanho dos pontos
-                    
-                    
+            }],
 
-            }]
+            tooltip: {
+                position: 'top',
+                formatter: '{c}'
+              },
         };
 
         myChart.setOption(option);
